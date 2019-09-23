@@ -1,0 +1,22 @@
+启动服务器
+    $ set FLASK_APP=app.py
+    $ flask run
+        让服务器被公开访问:
+            $ flask run --host=0.0.0.0
+
+变量规则
+    @app.route('/user/<username>')
+    def show_user_profile(username):
+        # show the user profile for that user
+        return 'User %s' % escape(username)
+
+    @app.route('/post/<int:post_id>')
+    def show_post(post_id):
+        # show the post with the given id, the id is an integer
+        return 'Post %d' % post_id
+    转换器类型：
+        string：（缺省值） 接受任何不包含斜杠的文本
+        int：接受正整数
+        float：接受正浮点数
+        path：类似 string ，但可以包含斜杠
+        uuid: 接受 UUID 字符串
