@@ -3,7 +3,6 @@ from flask import Flask, render_template, request, flash
 app = Flask(__name__)
 app.secret_key = 'eappo'
 
-
 @app.route('/', methods=["GET", "POST"])
 def index():
     if request.method == "POST":
@@ -17,6 +16,8 @@ def index():
         else:
             return 'success'
     return render_template('login.html')
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
