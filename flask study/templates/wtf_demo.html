@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="POST">
+    {# CSRF 跨段访问 #}
+    {{ login_form.csrf_token()}}
+    {{ login_form.username.label }}{{ login_form.username }}
+    {{ login_form.password.label }}{{ login_form.password }}
+    {{ login_form.password2.label }}{{ login_form.password2 }}
+    {{ login_form.submit}}
+    {% for message in get_flashed_messages() %}
+        {{ message }}
+    {% endfor %}
+</form>
+</body>
+</html>
