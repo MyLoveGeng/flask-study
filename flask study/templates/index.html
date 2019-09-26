@@ -5,6 +5,31 @@
     <title>Title</title>
 </head>
 <body>
-{{ name }}
+这是模板，这是首页
+{# 注释, 一个变量代码块的使用 #}
+{{ url_str }}
+{# 取列表 #}
+{{ my_list }}
+{{ my_list.2 }}
+{{ my_list[2] }}
+
+{# 取字典 #}
+{{ my_dict }}
+{{ my_dict.name }}
+{{ my_dict['name'] }}
+
+{# 列表的循环遍历 #}
+<hr>
+{% for num in my_list %}
+    {#  数据过滤  #}
+    {% if num > 3 %}
+        {{ num }}<br>
+    {% endif %}
+{% endfor %}
+
+<hr>
+{#  过滤器#}
+{{ url_str | capitalize }}
+{{ 'hello' | capitalize | reverse }}
 </body>
 </html>

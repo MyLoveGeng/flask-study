@@ -6,6 +6,7 @@
 </head>
 <body>
 <form method="POST">
+    {# CSRF 跨段访问 #}
     {{ login_form.csrf_token()}}
     {{ login_form.username.label }}{{ login_form.username }}
     {{ login_form.password.label }}{{ login_form.password }}
