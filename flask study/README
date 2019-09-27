@@ -3,3 +3,8 @@ $ pip install -r requirements.txt  @ 创建环境以来的所有副本
 $ {{ login_form.csrf_token()}} @ CSRF跨站请求伪造，源于WEB的隐式身份验证机制，
     @ WEB的身份验证机制虽然可以抱着一个请求时来自于某个用户的浏览器，
     @ 但却无法保证该请求是用户批准发送的。
+
+$ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade sqlalchemy --ignore-installed
+    @ 以前版本的mysql使用的是tx_isolation，现在版本的mysql8.0 被替换成了transaction_isolation
+    @ sqlalchemy.exc.InternalError: (pymysql.err.InternalError)
+    @(1193, "Unknown system variable 'tx_isolation'")
